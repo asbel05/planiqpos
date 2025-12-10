@@ -18,7 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             Marca.self,
             Unidad.self,
             Producto.self,
-            Precio.self
+            Precio.self,
+            Stock.self,
+            MovimientoStock.self,
+            Cliente.self,
+            Pedido.self,
+            DetallePedido.self,
+            PagoPedido.self
         ])
         let modelConfiguration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: false)
         
@@ -33,8 +39,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         return true
     }
-
-    // MARK: UISceneSession Lifecycle
 
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         return UISceneConfiguration(name: "Default Configuration", sessionRole: connectingSceneSession.role)

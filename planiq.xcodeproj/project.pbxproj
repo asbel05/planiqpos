@@ -46,6 +46,30 @@
 		F4815B062EEA113200D2D70B /* UnidadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815AFE2EEA113200D2D70B /* UnidadCell.swift */; };
 		F4815B072EEA113200D2D70B /* UnidadesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B002EEA113200D2D70B /* UnidadesViewController.swift */; };
 		F4815B082EEA113200D2D70B /* UnidadesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B022EEA113200D2D70B /* UnidadesViewModel.swift */; };
+		F4815B122EEA19D400D2D70B /* Cliente.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B092EEA19D400D2D70B /* Cliente.swift */; };
+		F4815B132EEA19D400D2D70B /* ClienteCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B0B2EEA19D400D2D70B /* ClienteCell.swift */; };
+		F4815B142EEA19D400D2D70B /* ClientesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B0D2EEA19D400D2D70B /* ClientesViewController.swift */; };
+		F4815B152EEA19D400D2D70B /* ClientesViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B0F2EEA19D400D2D70B /* ClientesViewModel.swift */; };
+		F4815B272EEA19DB00D2D70B /* DetallePedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B162EEA19DB00D2D70B /* DetallePedido.swift */; };
+		F4815B282EEA19DB00D2D70B /* PagoPedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B172EEA19DB00D2D70B /* PagoPedido.swift */; };
+		F4815B292EEA19DB00D2D70B /* Pedido.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B182EEA19DB00D2D70B /* Pedido.swift */; };
+		F4815B2A2EEA19DB00D2D70B /* CarritoItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B1A2EEA19DB00D2D70B /* CarritoItemCell.swift */; };
+		F4815B2B2EEA19DB00D2D70B /* PedidoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B1B2EEA19DB00D2D70B /* PedidoCell.swift */; };
+		F4815B2C2EEA19DB00D2D70B /* ProductoBusquedaCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B1C2EEA19DB00D2D70B /* ProductoBusquedaCell.swift */; };
+		F4815B2D2EEA19DB00D2D70B /* DetallePedidoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B1E2EEA19DB00D2D70B /* DetallePedidoViewController.swift */; };
+		F4815B2E2EEA19DB00D2D70B /* HistorialPedidosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B1F2EEA19DB00D2D70B /* HistorialPedidosViewController.swift */; };
+		F4815B2F2EEA19DB00D2D70B /* PagoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B202EEA19DB00D2D70B /* PagoViewController.swift */; };
+		F4815B302EEA19DB00D2D70B /* VentaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B212EEA19DB00D2D70B /* VentaViewController.swift */; };
+		F4815B312EEA19DB00D2D70B /* HistorialPedidosViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B232EEA19DB00D2D70B /* HistorialPedidosViewModel.swift */; };
+		F4815B322EEA19DB00D2D70B /* VentaViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B242EEA19DB00D2D70B /* VentaViewModel.swift */; };
+		F4815B402EEA19E000D2D70B /* MovimientoStock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B332EEA19E000D2D70B /* MovimientoStock.swift */; };
+		F4815B412EEA19E000D2D70B /* Stock.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B342EEA19E000D2D70B /* Stock.swift */; };
+		F4815B422EEA19E000D2D70B /* MovimientoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B362EEA19E000D2D70B /* MovimientoCell.swift */; };
+		F4815B432EEA19E000D2D70B /* StockCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B372EEA19E000D2D70B /* StockCell.swift */; };
+		F4815B442EEA19E000D2D70B /* AjusteStockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B392EEA19E000D2D70B /* AjusteStockViewController.swift */; };
+		F4815B452EEA19E000D2D70B /* HistorialMovimientosViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B3A2EEA19E000D2D70B /* HistorialMovimientosViewController.swift */; };
+		F4815B462EEA19E000D2D70B /* StockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B3B2EEA19E000D2D70B /* StockViewController.swift */; };
+		F4815B472EEA19E000D2D70B /* StockViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F4815B3D2EEA19E000D2D70B /* StockViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -90,6 +114,30 @@
 		F4815AFE2EEA113200D2D70B /* UnidadCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidadCell.swift; sourceTree = "<group>"; };
 		F4815B002EEA113200D2D70B /* UnidadesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidadesViewController.swift; sourceTree = "<group>"; };
 		F4815B022EEA113200D2D70B /* UnidadesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnidadesViewModel.swift; sourceTree = "<group>"; };
+		F4815B092EEA19D400D2D70B /* Cliente.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Cliente.swift; sourceTree = "<group>"; };
+		F4815B0B2EEA19D400D2D70B /* ClienteCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClienteCell.swift; sourceTree = "<group>"; };
+		F4815B0D2EEA19D400D2D70B /* ClientesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientesViewController.swift; sourceTree = "<group>"; };
+		F4815B0F2EEA19D400D2D70B /* ClientesViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ClientesViewModel.swift; sourceTree = "<group>"; };
+		F4815B162EEA19DB00D2D70B /* DetallePedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallePedido.swift; sourceTree = "<group>"; };
+		F4815B172EEA19DB00D2D70B /* PagoPedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoPedido.swift; sourceTree = "<group>"; };
+		F4815B182EEA19DB00D2D70B /* Pedido.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Pedido.swift; sourceTree = "<group>"; };
+		F4815B1A2EEA19DB00D2D70B /* CarritoItemCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CarritoItemCell.swift; sourceTree = "<group>"; };
+		F4815B1B2EEA19DB00D2D70B /* PedidoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PedidoCell.swift; sourceTree = "<group>"; };
+		F4815B1C2EEA19DB00D2D70B /* ProductoBusquedaCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductoBusquedaCell.swift; sourceTree = "<group>"; };
+		F4815B1E2EEA19DB00D2D70B /* DetallePedidoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetallePedidoViewController.swift; sourceTree = "<group>"; };
+		F4815B1F2EEA19DB00D2D70B /* HistorialPedidosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorialPedidosViewController.swift; sourceTree = "<group>"; };
+		F4815B202EEA19DB00D2D70B /* PagoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PagoViewController.swift; sourceTree = "<group>"; };
+		F4815B212EEA19DB00D2D70B /* VentaViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VentaViewController.swift; sourceTree = "<group>"; };
+		F4815B232EEA19DB00D2D70B /* HistorialPedidosViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorialPedidosViewModel.swift; sourceTree = "<group>"; };
+		F4815B242EEA19DB00D2D70B /* VentaViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VentaViewModel.swift; sourceTree = "<group>"; };
+		F4815B332EEA19E000D2D70B /* MovimientoStock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientoStock.swift; sourceTree = "<group>"; };
+		F4815B342EEA19E000D2D70B /* Stock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stock.swift; sourceTree = "<group>"; };
+		F4815B362EEA19E000D2D70B /* MovimientoCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovimientoCell.swift; sourceTree = "<group>"; };
+		F4815B372EEA19E000D2D70B /* StockCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockCell.swift; sourceTree = "<group>"; };
+		F4815B392EEA19E000D2D70B /* AjusteStockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AjusteStockViewController.swift; sourceTree = "<group>"; };
+		F4815B3A2EEA19E000D2D70B /* HistorialMovimientosViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistorialMovimientosViewController.swift; sourceTree = "<group>"; };
+		F4815B3B2EEA19E000D2D70B /* StockViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockViewController.swift; sourceTree = "<group>"; };
+		F4815B3D2EEA19E000D2D70B /* StockViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StockViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -132,6 +180,9 @@
 		F47D8BFB2EE7EF000084D135 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				F4815B3F2EEA19E000D2D70B /* Stock */,
+				F4815B262EEA19DB00D2D70B /* Ventas */,
+				F4815B112EEA19D400D2D70B /* Clientes */,
 				F4815B042EEA113200D2D70B /* Unidades */,
 				F4815AF62EEA112D00D2D70B /* Productos */,
 				F4815AE72EEA112600D2D70B /* Precios */,
@@ -478,6 +529,147 @@
 			path = Unidades;
 			sourceTree = "<group>";
 		};
+		F4815B0A2EEA19D400D2D70B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B092EEA19D400D2D70B /* Cliente.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4815B0C2EEA19D400D2D70B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B0B2EEA19D400D2D70B /* ClienteCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4815B0E2EEA19D400D2D70B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B0C2EEA19D400D2D70B /* Cells */,
+				F4815B0D2EEA19D400D2D70B /* ClientesViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4815B102EEA19D400D2D70B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B0F2EEA19D400D2D70B /* ClientesViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4815B112EEA19D400D2D70B /* Clientes */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B0A2EEA19D400D2D70B /* Model */,
+				F4815B0E2EEA19D400D2D70B /* View */,
+				F4815B102EEA19D400D2D70B /* ViewModel */,
+			);
+			path = Clientes;
+			sourceTree = "<group>";
+		};
+		F4815B192EEA19DB00D2D70B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B162EEA19DB00D2D70B /* DetallePedido.swift */,
+				F4815B172EEA19DB00D2D70B /* PagoPedido.swift */,
+				F4815B182EEA19DB00D2D70B /* Pedido.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4815B1D2EEA19DB00D2D70B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B1A2EEA19DB00D2D70B /* CarritoItemCell.swift */,
+				F4815B1B2EEA19DB00D2D70B /* PedidoCell.swift */,
+				F4815B1C2EEA19DB00D2D70B /* ProductoBusquedaCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4815B222EEA19DB00D2D70B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B1D2EEA19DB00D2D70B /* Cells */,
+				F4815B1E2EEA19DB00D2D70B /* DetallePedidoViewController.swift */,
+				F4815B1F2EEA19DB00D2D70B /* HistorialPedidosViewController.swift */,
+				F4815B202EEA19DB00D2D70B /* PagoViewController.swift */,
+				F4815B212EEA19DB00D2D70B /* VentaViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4815B252EEA19DB00D2D70B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B232EEA19DB00D2D70B /* HistorialPedidosViewModel.swift */,
+				F4815B242EEA19DB00D2D70B /* VentaViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4815B262EEA19DB00D2D70B /* Ventas */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B192EEA19DB00D2D70B /* Model */,
+				F4815B222EEA19DB00D2D70B /* View */,
+				F4815B252EEA19DB00D2D70B /* ViewModel */,
+			);
+			path = Ventas;
+			sourceTree = "<group>";
+		};
+		F4815B352EEA19E000D2D70B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B332EEA19E000D2D70B /* MovimientoStock.swift */,
+				F4815B342EEA19E000D2D70B /* Stock.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F4815B382EEA19E000D2D70B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B362EEA19E000D2D70B /* MovimientoCell.swift */,
+				F4815B372EEA19E000D2D70B /* StockCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		F4815B3C2EEA19E000D2D70B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B382EEA19E000D2D70B /* Cells */,
+				F4815B392EEA19E000D2D70B /* AjusteStockViewController.swift */,
+				F4815B3A2EEA19E000D2D70B /* HistorialMovimientosViewController.swift */,
+				F4815B3B2EEA19E000D2D70B /* StockViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F4815B3E2EEA19E000D2D70B /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B3D2EEA19E000D2D70B /* StockViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		F4815B3F2EEA19E000D2D70B /* Stock */ = {
+			isa = PBXGroup;
+			children = (
+				F4815B352EEA19E000D2D70B /* Model */,
+				F4815B3C2EEA19E000D2D70B /* View */,
+				F4815B3E2EEA19E000D2D70B /* ViewModel */,
+			);
+			path = Stock;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -549,40 +741,64 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F4815B272EEA19DB00D2D70B /* DetallePedido.swift in Sources */,
+				F4815B302EEA19DB00D2D70B /* VentaViewController.swift in Sources */,
 				F47D8C0C2EE7F0EA0084D135 /* LoginViewController.swift in Sources */,
 				F47D8C272EE80A480084D135 /* UsersViewModel.swift in Sources */,
+				F4815B442EEA19E000D2D70B /* AjusteStockViewController.swift in Sources */,
 				F4815AFB2EEA112D00D2D70B /* ProductosViewModel.swift in Sources */,
 				F47D8C222EE80A480084D135 /* AddUserViewController.swift in Sources */,
+				F4815B422EEA19E000D2D70B /* MovimientoCell.swift in Sources */,
+				F4815B312EEA19DB00D2D70B /* HistorialPedidosViewModel.swift in Sources */,
+				F4815B2E2EEA19DB00D2D70B /* HistorialPedidosViewController.swift in Sources */,
+				F4815B412EEA19E000D2D70B /* Stock.swift in Sources */,
 				F4815B072EEA113200D2D70B /* UnidadesViewController.swift in Sources */,
 				F4815AEC2EEA112600D2D70B /* PreciosViewModel.swift in Sources */,
+				F4815B2A2EEA19DB00D2D70B /* CarritoItemCell.swift in Sources */,
 				F4815AF92EEA112D00D2D70B /* ProductoFormViewController.swift in Sources */,
 				F47D8C102EE7F0FE0084D135 /* LoginViewModel.swift in Sources */,
 				F4815AE82EEA112600D2D70B /* Precio.swift in Sources */,
+				F4815B2C2EEA19DB00D2D70B /* ProductoBusquedaCell.swift in Sources */,
 				F47D8C242EE80A480084D135 /* UsersViewController.swift in Sources */,
 				F47D8C232EE80A480084D135 /* EditUserViewController.swift in Sources */,
+				F4815B322EEA19DB00D2D70B /* VentaViewModel.swift in Sources */,
+				F4815B292EEA19DB00D2D70B /* Pedido.swift in Sources */,
+				F4815B2F2EEA19DB00D2D70B /* PagoViewController.swift in Sources */,
 				F4815AD02EEA111A00D2D70B /* CategoriasViewModel.swift in Sources */,
 				F4815AF72EEA112D00D2D70B /* Producto.swift in Sources */,
 				F4815ADD2EEA112100D2D70B /* MarcasViewModel.swift in Sources */,
 				F47D8C262EE80A480084D135 /* EditUserViewModel.swift in Sources */,
+				F4815B402EEA19E000D2D70B /* MovimientoStock.swift in Sources */,
 				F47D8C252EE80A480084D135 /* AddUserViewModel.swift in Sources */,
 				F4815ACF2EEA111A00D2D70B /* CategoriasViewController.swift in Sources */,
 				F47D8C142EE7F6D50084D135 /* User.swift in Sources */,
+				F4815B432EEA19E000D2D70B /* StockCell.swift in Sources */,
+				F4815B142EEA19D400D2D70B /* ClientesViewController.swift in Sources */,
 				F47D8BEC2EE7EEF60084D135 /* ViewController.swift in Sources */,
 				F4815ADA2EEA112100D2D70B /* Marca.swift in Sources */,
+				F4815B452EEA19E000D2D70B /* HistorialMovimientosViewController.swift in Sources */,
 				F4815AF82EEA112D00D2D70B /* ProductoCell.swift in Sources */,
 				F47D8C182EE8008B0084D135 /* SetupViewController.swift in Sources */,
 				F4815ADB2EEA112100D2D70B /* MarcaCell.swift in Sources */,
 				F4815B082EEA113200D2D70B /* UnidadesViewModel.swift in Sources */,
+				F4815B2B2EEA19DB00D2D70B /* PedidoCell.swift in Sources */,
 				F47D8C162EE800810084D135 /* SetupViewModel.swift in Sources */,
+				F4815B2D2EEA19DB00D2D70B /* DetallePedidoViewController.swift in Sources */,
 				F47D8BE82EE7EEF60084D135 /* AppDelegate.swift in Sources */,
+				F4815B462EEA19E000D2D70B /* StockViewController.swift in Sources */,
+				F4815B132EEA19D400D2D70B /* ClienteCell.swift in Sources */,
 				F4815ACE2EEA111A00D2D70B /* CategoriaCell.swift in Sources */,
+				F4815B122EEA19D400D2D70B /* Cliente.swift in Sources */,
 				F4815B052EEA113200D2D70B /* Unidad.swift in Sources */,
 				F4815B062EEA113200D2D70B /* UnidadCell.swift in Sources */,
 				F47D8BEA2EE7EEF60084D135 /* SceneDelegate.swift in Sources */,
+				F4815B472EEA19E000D2D70B /* StockViewModel.swift in Sources */,
 				F4815AE92EEA112600D2D70B /* PrecioCell.swift in Sources */,
 				F4815AEB2EEA112600D2D70B /* PreciosViewController.swift in Sources */,
 				F4815ADC2EEA112100D2D70B /* MarcasViewController.swift in Sources */,
 				F4815AEA2EEA112600D2D70B /* PrecioFormViewController.swift in Sources */,
+				F4815B152EEA19D400D2D70B /* ClientesViewModel.swift in Sources */,
+				F4815B282EEA19DB00D2D70B /* PagoPedido.swift in Sources */,
 				F4815ACD2EEA111A00D2D70B /* Categoria.swift in Sources */,
 				F4815AFA2EEA112D00D2D70B /* ProductosViewController.swift in Sources */,
 			);

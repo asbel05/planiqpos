@@ -13,8 +13,6 @@ final class ViewController: UIViewController {
     private var currentUser: User?
     private var userRole: UserRole = .cashier
     
-    // MARK: - UI
-    
     private let headerView: UIView = {
         let view = UIView()
         view.backgroundColor = .systemBlue
@@ -63,12 +61,9 @@ final class ViewController: UIViewController {
     
     private var modules: [Module] = []
 
-    // MARK: - Lifecycle
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemGroupedBackground
-        
         loadUserData()
         setupUI()
         setupModules()
@@ -78,8 +73,6 @@ final class ViewController: UIViewController {
         super.viewWillAppear(animated)
         navigationController?.setNavigationBarHidden(true, animated: false)
     }
-    
-    // MARK: - Setup
     
     private func setupUI() {
         view.addSubview(headerView)
@@ -118,65 +111,47 @@ final class ViewController: UIViewController {
         guard let userIdString = UserDefaults.standard.string(forKey: "currentUserId"),
               let userId = UUID(uuidString: userIdString),
               let roleString = UserDefaults.standard.string(forKey: "currentUserRole"),
-              let role = UserRole(rawValue: roleString) else {
-            return
-        }
+              let role = UserRole(rawValue: roleString) else { return }
         
         userRole = role
-        
         let context = AppDelegate.sharedModelContainer.mainContext
-        let fetchDescriptor = FetchDescriptor<User>(
-            predicate: #Predicate { user in
-                user.id == userId
-            }
-        )
+        let fetchDescriptor = FetchDescriptor<User>(predicate: #Predicate { $0.id == userId })
         
         Task { @MainActor in
-            do {
-                let users = try context.fetch(fetchDescriptor)
-                if let user = users.first {
-                    currentUser = user
-                    usernameLabel.text = "(\(user.nombreCompleto))"
-                }
-            } catch {
-                usernameLabel.text = "(Error)"
+            if let user = try? context.fetch(fetchDescriptor).first {
+                currentUser = user
+                usernameLabel.text = "(\(user.nombreCompleto))"
             }
         }
     }
     
     private func setupModules() {
         if userRole == .admin {
-            // Admin ve todos los módulos
             modules = [
                 Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
                 Module(title: "Productos", icon: "cube.box.fill", color: .systemOrange),
+                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo),
+                Module(title: "Clientes", icon: "person.crop.circle.fill", color: .systemTeal),
                 Module(title: "Categorías", icon: "folder.fill", color: .systemYellow),
                 Module(title: "Marcas", icon: "tag.fill", color: .systemPurple),
-                Module(title: "Unidades", icon: "scalemass.fill", color: .systemTeal),
-                Module(title: "Precios", icon: "dollarsign.circle.fill", color: .systemGreen),
-                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo),
-                Module(title: "Reportes", icon: "chart.bar.fill", color: .systemPink),
+                Module(title: "Unidades", icon: "scalemass.fill", color: .systemCyan),
+                Module(title: "Precios", icon: "dollarsign.circle.fill", color: .systemMint),
                 Module(title: "Usuarios", icon: "person.2.fill", color: .systemBlue)
             ]
         } else if userRole == .vendedor {
-            // Vendedor ve módulos de venta e inventario
             modules = [
                 Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
                 Module(title: "Productos", icon: "cube.box.fill", color: .systemOrange),
-                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo)
+                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo),
+                Module(title: "Clientes", icon: "person.crop.circle.fill", color: .systemTeal)
             ]
         } else {
-            // Cajero solo ve módulos limitados
             modules = [
-                Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
-                Module(title: "Productos", icon: "cube.box.fill", color: .systemGray)
+                Module(title: "Ventas", icon: "cart.fill", color: .systemGreen)
             ]
         }
-        
         collectionView.reloadData()
     }
-    
-    // MARK: - Actions
     
     @objc private func logoutTapped() {
         UserDefaults.standard.removeObject(forKey: "currentUserId")
@@ -189,17 +164,12 @@ final class ViewController: UIViewController {
         let navController = UINavigationController(rootViewController: loginVC)
         window.rootViewController = navController
         window.makeKeyAndVisible()
-        
         UIView.transition(with: window, duration: 0.3, options: .transitionCrossDissolve, animations: nil)
     }
 }
 
-// MARK: - UICollectionViewDataSource
-
 extension ViewController: UICollectionViewDataSource {
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return modules.count
-    }
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int { modules.count }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "ModuleCell", for: indexPath) as! ModuleCell
@@ -208,64 +178,37 @@ extension ViewController: UICollectionViewDataSource {
     }
 }
 
-// MARK: - UICollectionViewDelegate
-
 extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let module = modules[indexPath.item]
-        
-        var viewController: UIViewController?
+        var vc: UIViewController?
         
         switch module.title {
-        case "Usuarios":
-            viewController = UsersViewController()
-        case "Productos":
-            viewController = ProductosViewController()
-        case "Categorías":
-            viewController = CategoriasViewController()
-        case "Marcas":
-            viewController = MarcasViewController()
-        case "Unidades":
-            viewController = UnidadesViewController()
-        case "Precios":
-            viewController = PreciosViewController()
-        default:
-            let alert = UIAlertController(title: module.title, message: "Módulo en desarrollo", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default))
-            present(alert, animated: true)
-            return
+        case "Ventas": vc = VentaViewController()
+        case "Productos": vc = ProductosViewController()
+        case "Inventario": vc = StockViewController()
+        case "Clientes": vc = ClientesViewController()
+        case "Categorías": vc = CategoriasViewController()
+        case "Marcas": vc = MarcasViewController()
+        case "Unidades": vc = UnidadesViewController()
+        case "Precios": vc = PreciosViewController()
+        case "Usuarios": vc = UsersViewController()
+        default: break
         }
-        
-        if let vc = viewController {
-            navigationController?.pushViewController(vc, animated: true)
-        }
+        if let vc = vc { navigationController?.pushViewController(vc, animated: true) }
     }
 }
 
-// MARK: - UICollectionViewDelegateFlowLayout
-
 extension ViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let padding: CGFloat = 20
-        let spacing: CGFloat = 16
-        let availableWidth = collectionView.bounds.width - (padding * 2) - spacing
-        let width = availableWidth / 2
+        let width = (collectionView.bounds.width - 56) / 2
         return CGSize(width: width, height: 140)
     }
 }
 
-// MARK: - Module Model
-
-struct Module {
-    let title: String
-    let icon: String
-    let color: UIColor
-}
-
-// MARK: - ModuleCell
+struct Module { let title: String; let icon: String; let color: UIColor }
 
 class ModuleCell: UICollectionViewCell {
-    
     private let iconImageView: UIImageView = {
         let iv = UIImageView()
         iv.contentMode = .scaleAspectFit
@@ -285,34 +228,21 @@ class ModuleCell: UICollectionViewCell {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        setupUI()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
-    
-    private func setupUI() {
         contentView.layer.cornerRadius = 12
-        contentView.layer.shadowColor = UIColor.black.cgColor
-        contentView.layer.shadowOpacity = 0.1
-        contentView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        contentView.layer.shadowRadius = 4
-        
         contentView.addSubview(iconImageView)
         contentView.addSubview(titleLabel)
-        
         NSLayoutConstraint.activate([
             iconImageView.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             iconImageView.centerYAnchor.constraint(equalTo: contentView.centerYAnchor, constant: -15),
             iconImageView.widthAnchor.constraint(equalToConstant: 50),
             iconImageView.heightAnchor.constraint(equalToConstant: 50),
-            
             titleLabel.topAnchor.constraint(equalTo: iconImageView.bottomAnchor, constant: 12),
             titleLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 8),
             titleLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -8)
         ])
     }
+    
+    required init?(coder: NSCoder) { fatalError("init(coder:) has not been implemented") }
     
     func configure(with module: Module) {
         titleLabel.text = module.title

@@ -26,6 +26,14 @@ final class Producto {
     @Relationship(deleteRule: .cascade, inverse: \Precio.producto)
     var precios: [Precio] = []
     
+    // Relación uno a uno con Stock
+    @Relationship(deleteRule: .cascade, inverse: \Stock.producto)
+    var stock: Stock?
+    
+    // Relación con DetallePedido
+    @Relationship(deleteRule: .nullify, inverse: \DetallePedido.producto)
+    var detallesPedido: [DetallePedido] = []
+    
     init(codigo: String, descripcion: String, categoria: Categoria? = nil, marca: Marca? = nil, unidad: Unidad? = nil) {
         self.id = UUID()
         self.codigo = codigo
@@ -48,6 +56,14 @@ final class Producto {
         return precio.precioUnitarioFormateado
     }
     
+    var precioActivoValor: Double {
+        precioActivo?.precioUnitario ?? 0
+    }
+    
+    var costoActivo: Double {
+        precioActivo?.costoNeto ?? 0
+    }
+    
     var categoriaNombre: String {
         categoria?.nombre ?? "Sin categoría"
     }
@@ -62,6 +78,29 @@ final class Producto {
     
     var unidadAbreviatura: String {
         unidad?.abreviatura ?? "und"
+    }
+    
+    // MARK: - Stock Properties
+    
+    var stockActual: Int {
+        stock?.cantidad ?? 0
+    }
+    
+    var tieneStock: Bool {
+        stockActual > 0
+    }
+    
+    var tieneStockBajo: Bool {
+        guard let s = stock else { return false }
+        return s.cantidad > 0 && s.cantidad <= s.stockMinimo
+    }
+    
+    var estadoStock: EstadoStock {
+        stock?.estadoStock ?? .sinStock
+    }
+    
+    var stockFormateado: String {
+        "\(stockActual) \(unidadAbreviatura)"
     }
     
     // MARK: - Código Auto-generado

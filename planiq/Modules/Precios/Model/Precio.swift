@@ -27,6 +27,10 @@ final class Precio {
     // Relación hacia Producto (lado "muchos")
     var producto: Producto?
     
+    // Relación con DetallePedido
+    @Relationship(deleteRule: .nullify, inverse: \DetallePedido.precio)
+    var detallesPedido: [DetallePedido] = []
+    
     init(
         precioUnitario: Double,
         precioMayorista: Double = 0,
