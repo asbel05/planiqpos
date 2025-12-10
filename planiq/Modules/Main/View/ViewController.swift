@@ -150,16 +150,25 @@ final class ViewController: UIViewController {
             modules = [
                 Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
                 Module(title: "Productos", icon: "cube.box.fill", color: .systemOrange),
-                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemPurple),
-                Module(title: "Caja", icon: "dollarsign.circle.fill", color: .systemBlue),
-                Module(title: "Reportes", icon: "chart.bar.fill", color: .systemTeal),
-                Module(title: "Usuarios", icon: "person.2.fill", color: .systemIndigo)
+                Module(title: "Categorías", icon: "folder.fill", color: .systemYellow),
+                Module(title: "Marcas", icon: "tag.fill", color: .systemPurple),
+                Module(title: "Unidades", icon: "scalemass.fill", color: .systemTeal),
+                Module(title: "Precios", icon: "dollarsign.circle.fill", color: .systemGreen),
+                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo),
+                Module(title: "Reportes", icon: "chart.bar.fill", color: .systemPink),
+                Module(title: "Usuarios", icon: "person.2.fill", color: .systemBlue)
+            ]
+        } else if userRole == .vendedor {
+            // Vendedor ve módulos de venta e inventario
+            modules = [
+                Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
+                Module(title: "Productos", icon: "cube.box.fill", color: .systemOrange),
+                Module(title: "Inventario", icon: "list.bullet.clipboard.fill", color: .systemIndigo)
             ]
         } else {
             // Cajero solo ve módulos limitados
             modules = [
                 Module(title: "Ventas", icon: "cart.fill", color: .systemGreen),
-                Module(title: "Caja", icon: "dollarsign.circle.fill", color: .systemBlue),
                 Module(title: "Productos", icon: "cube.box.fill", color: .systemGray)
             ]
         }
@@ -205,14 +214,30 @@ extension ViewController: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let module = modules[indexPath.item]
         
+        var viewController: UIViewController?
+        
         switch module.title {
         case "Usuarios":
-            let usersVC = UsersViewController()
-            navigationController?.pushViewController(usersVC, animated: true)
+            viewController = UsersViewController()
+        case "Productos":
+            viewController = ProductosViewController()
+        case "Categorías":
+            viewController = CategoriasViewController()
+        case "Marcas":
+            viewController = MarcasViewController()
+        case "Unidades":
+            viewController = UnidadesViewController()
+        case "Precios":
+            viewController = PreciosViewController()
         default:
             let alert = UIAlertController(title: module.title, message: "Módulo en desarrollo", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "OK", style: .default))
             present(alert, animated: true)
+            return
+        }
+        
+        if let vc = viewController {
+            navigationController?.pushViewController(vc, animated: true)
         }
     }
 }
@@ -295,4 +320,3 @@ class ModuleCell: UICollectionViewCell {
         contentView.backgroundColor = module.color
     }
 }
-
