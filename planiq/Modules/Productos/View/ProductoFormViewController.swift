@@ -172,6 +172,13 @@ final class ProductoFormViewController: UIViewController {
         setupActions()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Recargar datos de pickers cada vez que vuelve a la pantalla
+        // Esto asegura que las categorías, marcas y unidades recién creadas aparezcan
+        loadPickerData()
+    }
+    
     // MARK: - Setup
     
     private func setupUI() {

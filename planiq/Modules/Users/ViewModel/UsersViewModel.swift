@@ -30,7 +30,7 @@ final class UsersViewModel {
     func loadUsers() {
         Task {
             let fetchDescriptor = FetchDescriptor<User>(
-                sortBy: [SortDescriptor(\.createdAt, order: .reverse)]
+                sortBy: [SortDescriptor(\.fechaRegistro, order: .reverse)]
             )
             
             do {

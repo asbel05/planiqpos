@@ -66,6 +66,12 @@ final class ClientesViewController: UIViewController {
         viewModel.fetchClientes()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        // Mostrar la barra de navegación para poder regresar
+        navigationController?.setNavigationBarHidden(false, animated: true)
+    }
+    
     // MARK: - Setup
     
     private func setupUI() {
